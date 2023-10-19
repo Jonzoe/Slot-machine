@@ -35,7 +35,7 @@ void checkInput(){
         cin.clear();
         cin.ignore(256, '\n');
         cout << endl;
-        cout << "Please only input letters" << endl;
+        cout << "Please only input numbers." << endl;
     }
 }
 
