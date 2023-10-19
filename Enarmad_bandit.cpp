@@ -14,7 +14,9 @@ void gameLoop();
 int totalWinToday = 0;
 int depositedMoney = 0;
 
+// Mainloop of the program.
 int main() {
+    // Variables.
     int checkedAge;
 
     checkedAge = checkAge();
@@ -22,9 +24,19 @@ int main() {
         gameLoop();
     }
     else {
-        cout << "Error! Something went wrong!";
+        cout << "Error! Something went wrong!"; // This should not be able to happen because of the do while loop in the checkAge() function.
     }
     return 0;
+}
+
+// Prevents the code from crashing when inputting something that isn't a letter.
+void checkInput(){
+    if (cin.fail()){
+        cin.clear();
+        cin.ignore(256, '\n');
+        cout << endl;
+        cout << "Please only input letters" << endl;
+    }
 }
 
 // Gameloop.
@@ -34,6 +46,7 @@ void gameLoop() {
 
     // Resets the time on the random function.
     srand(time(0));
+    
     if (depositedMoney < 100) {
         depositedMoney += depositMoney();
     }
@@ -53,9 +66,10 @@ int checkAge() {
             "You need to enter your age (18-120)\n"
             "How old are you?: ";
         cin >> age;
+        checkInput();
         cout << endl;
     } while (age < 18 && cout << "You must be at least 18 years old!\n" || age > 120 && cout << "You can't be older than 120 years!\n");
-
+    
     return age;
 }
 
@@ -71,6 +85,7 @@ int depositMoney() {
             "3. 500 kr\n"
             "How much do you want to deposit?: ";
         cin >> amountOfMoney;
+        checkInput();
         cout << endl;
     } while (amountOfMoney != 100 && amountOfMoney != 300 && amountOfMoney != 500 && cout << "You can only choose between 100, 300 or 500 kr.");
 
@@ -91,6 +106,7 @@ int betMoney() {
             "You have " << depositedMoney << " kr deposited.\n"
             "How much do you want to bet?: ";
         cin >> bet;
+        checkInput();
         cout << endl;
     } while (bet < 100 && cout << "You cannot bet under 100 kr." << endl || bet > depositedMoney && cout << "You cannot bet more than your deposit (" << depositedMoney << ") kr." << endl);
 
@@ -207,7 +223,7 @@ void checkFieldResult(int winResult, int bet) {
         case 8:
             depositedMoney += bet * 10;
             totalWinToday += bet * 10;
-            cout << "You got full field, you win " << bet * 10 << " kr and your new deposit is " << depositedMoney << " kr!\n"
+            cout << "You got a full field, you win " << bet * 10 << " kr and your new deposit is " << depositedMoney << " kr!\n"
                 "You have won/lost this much today: " << totalWinToday << " kr.";
             cout << endl;
             break;
@@ -235,6 +251,7 @@ void playAgain() {
             "2. Cash out\n"
             "Type in your answer here: ";
         cin >> playAgain;
+        checkInput();
         cout << endl;
     } while (playAgain != 1 && playAgain != 2 && cout << "You can only input 1 or 2.");
 
@@ -249,7 +266,7 @@ void playAgain() {
         }
     }
     else {
-        cout << "Cashing out (" << depositedMoney << " kr). Thanks for playing!" << endl;
+        cout << "Cashing out " << depositedMoney << " kr. Thanks for playing!" << endl;
         exit(0);
     }
 }

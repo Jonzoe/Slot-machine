@@ -3,7 +3,11 @@
         "iostream": "cpp",
         "xlocmon": "cpp",
         "xstring": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "xiosbase": "cpp",
+        "atomic": "cpp",
+        "ios": "cpp",
+        "system_error": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
