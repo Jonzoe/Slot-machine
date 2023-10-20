@@ -142,24 +142,24 @@ int createFieldAndCheckWin() {
     // Rows.
     for (int i = 0; i < 3; i++) {
         if (field[i][0] == field[i][1] && field[i][1] == field[i][2]) {
-            win += 1;
+            win++;
         }
     }
 
     // Columns.
     for (int i = 0; i < 3; i++) {
         if (field[0][i] == field[1][i] && field[1][i] == field[2][i]) {
-            win += 1;
+            win++;
         }
     }
 
     // Top left to bot right.
     if (field[0][0] == field[1][1] && field[1][1] == field[2][2]) {
-        win += 1;
+        win++;
     }
     // Bot left to top right.
     else if (field[0][2] == field[1][1] && field[1][1] == field[2][0]) {
-        win += 1;
+        win++;
     }
     return win;
 }
