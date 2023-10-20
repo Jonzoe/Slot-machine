@@ -252,7 +252,7 @@ void playAgain() {
         cout << endl;
     } while (playAgain != 1 && playAgain != 2 && cout << "You can only input 1 or 2.");
 
-    // User wanted to play again.
+    // User wants to play again.
     if (playAgain == 1) {
         if (depositedMoney < 100) { // User does not have at least 100 kr deposited.
             cout << "You need to deposit more money." << endl;
