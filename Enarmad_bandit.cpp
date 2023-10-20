@@ -41,9 +41,6 @@ void checkInput(){
 
 // Gameloop.
 void gameLoop() {
-    // Variables.
-    bool win = false;
-
     // Resets the time on the random function.
     srand(time(0));
     
