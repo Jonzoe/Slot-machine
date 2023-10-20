@@ -240,7 +240,7 @@ void playAgain() {
     // Variables.
     int playAgain;
 
-    // Askes if the user wants to play again.
+    // Asks if the user wants to play again.
     do {
         cout << endl;
         cout << "Do you want to play again or cash out? (Type 1 to play again, 2 to cash out).\n"
