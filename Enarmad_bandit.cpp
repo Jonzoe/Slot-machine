@@ -263,7 +263,7 @@ void playAgain() {
             gameLoop(); // Runs the game again.
         }
     }
-    // The user did not want to play again.
+    // The user does not want to play again.
     else {
         cout << "Cashing out " << depositedMoney << " kr. Thanks for playing!" << endl;
         exit(0);
