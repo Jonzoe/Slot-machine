@@ -29,7 +29,7 @@ int main() {
     return 0;
 }
 
-// Prevents the code from crashing when inputting something that isn't a letter.
+// Prevents the code from crashing when inputting a letter.
 void checkInput(){
     if (cin.fail()){
         cin.clear();
