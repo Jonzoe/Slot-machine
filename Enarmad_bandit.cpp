@@ -29,7 +29,7 @@ int main() {
     return 0;
 }
 
-// Prevents the code from crashing when inputting something that isn't a letter.
+// Prevents the code from crashing when inputting a letter.
 void checkInput(){
     if (cin.fail()){
         cin.clear();
@@ -41,9 +41,6 @@ void checkInput(){
 
 // Gameloop.
 void gameLoop() {
-    // Variables.
-    bool win = false;
-
     // Resets the time on the random function.
     srand(time(0));
     
@@ -145,24 +142,24 @@ int createFieldAndCheckWin() {
     // Rows.
     for (int i = 0; i < 3; i++) {
         if (field[i][0] == field[i][1] && field[i][1] == field[i][2]) {
-            win += 1;
+            win++;
         }
     }
 
     // Columns.
     for (int i = 0; i < 3; i++) {
         if (field[0][i] == field[1][i] && field[1][i] == field[2][i]) {
-            win += 1;
+            win++;
         }
     }
 
     // Top left to bot right.
     if (field[0][0] == field[1][1] && field[1][1] == field[2][2]) {
-        win += 1;
+        win++;
     }
     // Bot left to top right.
     else if (field[0][2] == field[1][1] && field[1][1] == field[2][0]) {
-        win += 1;
+        win++;
     }
     return win;
 }
@@ -243,7 +240,7 @@ void playAgain() {
     // Variables.
     int playAgain;
 
-    // Askes if the user wants to play again.
+    // Asks if the user wants to play again.
     do {
         cout << endl;
         cout << "Do you want to play again or cash out? (Type 1 to play again, 2 to cash out).\n"
@@ -255,7 +252,7 @@ void playAgain() {
         cout << endl;
     } while (playAgain != 1 && playAgain != 2 && cout << "You can only input 1 or 2.");
 
-    // User wanted to play again.
+    // User wants to play again.
     if (playAgain == 1) {
         if (depositedMoney < 100) { // User does not have at least 100 kr deposited.
             cout << "You need to deposit more money." << endl;
@@ -266,7 +263,7 @@ void playAgain() {
             gameLoop(); // Runs the game again.
         }
     }
-    // The user did not want to play again.
+    // The user does not want to play again.
     else {
         cout << "Cashing out " << depositedMoney << " kr. Thanks for playing!" << endl;
         exit(0);
