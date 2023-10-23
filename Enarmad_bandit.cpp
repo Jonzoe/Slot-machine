@@ -118,7 +118,7 @@ int createFieldAndCheckWin() {
     // Variables.
     int win = 0;
 
-    // Creates an 2D array that is 3*3.
+    // Creates a 2D array that is 3*3.
     int field[3][3]{};
 
     // Insers random characters into the array objects.
