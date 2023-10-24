@@ -170,6 +170,7 @@ void checkFieldResult(int winResult, int bet) {
     switch (winResult) {
         // One argument
         case 1:
+            depositedMoney -= bet;
             depositedMoney += bet * 2;
             totalWinToday += bet * 2;
             cout << "You got one argument correct, you win " << bet * 2 << " kr and your new deposit is " << depositedMoney << " kr!\n"
@@ -178,6 +179,7 @@ void checkFieldResult(int winResult, int bet) {
             break;
         // Two arguments
         case 2:
+            depositedMoney -= bet;
             depositedMoney += bet * 2;
             totalWinToday += bet * 2;
             cout << "You got two arguments correct, you win " << bet * 2 << " kr and your new deposit is " << depositedMoney << " kr!\n"
@@ -186,6 +188,7 @@ void checkFieldResult(int winResult, int bet) {
             break;
         // Three arguments
         case 3:
+            depositedMoney -= bet;
             depositedMoney += bet * 3;
             totalWinToday += bet * 3;
             cout << "You got three arguments correct, you win " << bet * 3 << " kr and your new deposit is " << depositedMoney << " kr!\n"
@@ -194,6 +197,7 @@ void checkFieldResult(int winResult, int bet) {
             break;
         // Four arguemnts
         case 4:
+            depositedMoney -= bet;
             depositedMoney += bet * 3;
             totalWinToday += bet * 3;
             cout << "You got four arguments correct, you win " << bet * 3 << " kr and your new deposit is " << depositedMoney << " kr!\n"
@@ -202,6 +206,7 @@ void checkFieldResult(int winResult, int bet) {
             break;
         // Five arguments
         case 5:
+            depositedMoney -= bet;
             depositedMoney += bet * 5;
             totalWinToday += bet * 5;
             cout << "You got five arguments correct, you win " << bet * 5 << " kr and your new deposit is " << depositedMoney << " kr!\n"
@@ -210,6 +215,7 @@ void checkFieldResult(int winResult, int bet) {
             break;
         // Six arguments
         case 6:
+            depositedMoney -= bet;
             depositedMoney += bet * 5;
             totalWinToday += bet * 5;
             cout << "You got six arguments correct, you win " << bet * 5 << " kr and your new deposit is " << depositedMoney << " kr!\n"
@@ -218,6 +224,7 @@ void checkFieldResult(int winResult, int bet) {
             break;
         // Eight arguments
         case 8:
+            depositedMoney -= bet;
             depositedMoney += bet * 10;
             totalWinToday += bet * 10;
             cout << "You got a full field, you win " << bet * 10 << " kr and your new deposit is " << depositedMoney << " kr!\n"
