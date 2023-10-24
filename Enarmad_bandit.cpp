@@ -170,7 +170,6 @@ void checkFieldResult(int winResult, int bet) {
     switch (winResult) {
         // One argument
         case 1:
-            depositedMoney -= bet;
             depositedMoney += bet * 2;
             totalWinToday += bet * 2;
             cout << "You got one argument correct, you win " << bet * 2 << " kr and your new deposit is " << depositedMoney << " kr!\n"
